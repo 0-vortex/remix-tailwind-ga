@@ -1,4 +1,5 @@
-import {ReactElement, FC, useState, Fragment} from 'react';
+import type {ReactElement, FC} from 'react';
+import { useState, Fragment} from 'react';
 import type {TableRow} from "~/interfaces/TableRow";
 
 export type RecursiveTableRow = TableRow & {
@@ -57,8 +58,8 @@ const RecursiveTable: FC<{ patients: TableRow[] }> = ({patients}): ReactElement 
                     <span className="sr-only">Quantity button</span>
                     <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                          viewBox="0 0 18 2">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="2" d="M1 1h16"/>
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                              strokeWidth="2" d="M1 1h16"/>
                     </svg>
                 </button>
             );
@@ -71,8 +72,8 @@ const RecursiveTable: FC<{ patients: TableRow[] }> = ({patients}): ReactElement 
                     <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                          fill="none"
                          viewBox="0 0 18 18">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="2" d="M9 1v16M1 9h16"/>
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                              strokeWidth="2" d="M9 1v16M1 9h16"/>
                     </svg>
                 </button>
             );
@@ -137,6 +138,10 @@ const RecursiveTable: FC<{ patients: TableRow[] }> = ({patients}): ReactElement 
                 })}
             </>
         );
+    }
+
+    if (headers.length === 0) {
+        return <></>;
     }
 
     return (
