@@ -18,7 +18,7 @@ export default function Index() {
   return (
       <div className="mt-10 flex-grow px-4 md:px-16 lg:px-32">
         <h1 className="text-4xl mb-10 font-bold text-red-700">GraphAware Test</h1>
-        <ExpandableTable patients={patients} />
+        <ExpandableTable patients={patients} caption="PATIENTS" />
       </div>
   );
 }

@@ -20,7 +20,7 @@ const ExpandableTableRow: FC<ExpandableTableRowProps> = ({
 
     return (
         <>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" onClick={() => onExpandToggle(Object.keys(row.data)[0], row.data[Object.keys(row.data)[0]])}>
                 <td className="w-4 p-4">
                     {hasKids && <ExpandCollapseToggle
                         row={row}
@@ -57,7 +57,6 @@ const ExpandableTableRow: FC<ExpandableTableRowProps> = ({
                         <ExpandableTable
                             patients={row?.kids?.[Object.keys(row?.kids)[0]]?.records}
                             caption={Object.keys(row?.kids)[0]}
-                            parentRow={row}
                         />
                     </td>
                 </tr>
