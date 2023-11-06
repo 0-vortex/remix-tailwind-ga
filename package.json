@@ -6,6 +6,8 @@
     "build": "remix build",
     "dev": "remix dev",
     "start": "remix-serve build",
+    "lint": "eslint ./app",
+    "format": "npm run lint -- --fix",
     "typecheck": "tsc"
   },
   "dependencies": {
